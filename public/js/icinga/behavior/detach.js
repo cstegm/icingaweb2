@@ -37,6 +37,10 @@
             }
         }
 
+        if (! $container.parent().find('.detach').first().length) {
+            return content;
+        }
+
         var $content = $('<div></div>').append(content);
         var icinga = this.icinga;
 
