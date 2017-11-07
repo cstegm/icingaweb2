@@ -27,8 +27,14 @@
      */
     Detach.prototype.renderHook = function(content, $container, action, autorefresh) {
         // Exit early
-        if (! autorefresh || $container.attr('id') === 'menu') {
+        if (! autorefresh) {
             return content;
+        } else {
+            var containerId = $container.attr('id');
+
+            if (containerId === 'menu' || containerId === 'application-state') {
+                return content;
+            }
         }
 
         var $content = $('<div></div>').append(content);
