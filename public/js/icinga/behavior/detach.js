@@ -47,7 +47,12 @@
         $content.find('.detach').each(function() {
             // Selector only works w/ IDs because it was initially built to work w/ absolute paths only
             var $detachTarget = $(this);
-            var selector = icinga.utils.getCSSPath($detachTarget);
+            var detachTargetId = $detachTarget.attr('id');
+            if (detachTargetId === undefined) {
+                return;
+            }
+
+            var selector = '#' + detachTargetId;
             var $detachSource = $container.parent().find(selector).first();
 
             if ($detachSource.length) {
