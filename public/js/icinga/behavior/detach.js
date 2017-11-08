@@ -13,7 +13,7 @@
         Icinga.EventListener.call(this, icinga);
     }
 
-    Detach.prototype = Object.create(Icinga.EventListener.prototype);
+    Detach.prototype = new Icinga.EventListener();
 
     /**
      * Mutates the HTML before it is placed in the DOM after a reload
