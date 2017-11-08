@@ -37,7 +37,7 @@
             }
         }
 
-        if (! $container.parent().find('.detach').first().length) {
+        if (! $container.parent().find('.detach:first').length) {
             return content;
         }
 
@@ -52,8 +52,8 @@
                 return;
             }
 
-            var selector = '#' + detachTargetId;
-            var $detachSource = $container.parent().find(selector).first();
+            var selector = '#' + detachTargetId + ':first';
+            var $detachSource = $container.parent().find(selector);
 
             if ($detachSource.length) {
                 icinga.logger.debug('Detaching ' + selector);
