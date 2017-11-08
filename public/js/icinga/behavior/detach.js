@@ -37,7 +37,7 @@
             }
         }
 
-        if (! $container.parent().find('.detach:first').length) {
+        if (! $container.find('.detach:first').length) {
             return content;
         }
 
@@ -53,7 +53,7 @@
             }
 
             var selector = '#' + detachTargetId + ':first';
-            var $detachSource = $container.parent().find(selector);
+            var $detachSource = $container.find(selector);
 
             if ($detachSource.length) {
                 icinga.logger.debug('Detaching ' + selector);
